@@ -11,6 +11,7 @@ let signer = new ethers.Wallet(privateKey, provider);
 let format = (x) => console.log(ethers.utils.formatUnits(x, 0));
 
 module.exports = {
+  ethers: ethers,
   address: address,
   provider: provider,
   signer: signer,
