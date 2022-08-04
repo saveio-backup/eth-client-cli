@@ -10,8 +10,9 @@ let signer = new ethers.Wallet(privateKey, provider);
 
 let format = (x) => console.log(ethers.utils.formatUnits(x, 0));
 
-exports.address = address;
-exports.provider = provider;
-exports.signer = signer;
-
-exports.format = format;
+module.exports = {
+  address: address,
+  provider: provider,
+  signer: signer,
+  format: format,
+};
