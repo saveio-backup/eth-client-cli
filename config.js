@@ -1,9 +1,18 @@
 const { ethers } = require("ethers");
 
-const url = "http://127.0.0.1:8545";
-const address = "0x159F5EFDAb6747E72c8827BeA109bf8880BA076c";
-const privateKey =
-  "3fd8c7f630a5517da7a01c97ee5e3e2d36f79bf254bd6d85f78895541aaa860a";
+let envFlag = 'opdev'
+
+let env = {
+  opdev: {
+    url: "http://106.75.76.46:33373",
+    address: "0x00000398232e2064f896018496b4b44b3d62751f",
+    privateKey: "6587ae678cf4fc9a33000cdbf9f35226b71dcc6a4684a31203241f9bcfd55d27"
+  }
+}
+
+const url = env[envFlag].url;
+const address = env[envFlag].address;
+const privateKey = env[envFlag].privateKey;
 
 let provider = new ethers.providers.JsonRpcProvider(url);
 let signer = new ethers.Wallet(privateKey, provider);

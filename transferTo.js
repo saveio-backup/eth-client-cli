@@ -12,7 +12,7 @@ const { format, provider, signer, address } = require("./config.js");
   const tx = {
     from: from,
     to: to,
-    value: 100,
+    value: BigInt(100 * Math.pow(10, 18)),
   };
   await signer.sendTransaction(tx).then(console.log);
 
